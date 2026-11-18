@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/png" href="asset-01.png" />
+    <title>Desi Romoni Album — Sarees &amp; Salwar Kameez Lookbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #faf4ea;
+        --surface: #ffffff;
+        --surface-2: #f3e9d8;
+        --ink: #2c1a12;
+        --muted: #7d6a58;
+        --maroon: #7c1d2d;
+        --maroon-deep: #57101f;
+        --maroon-ink: #fdf3e3;
+        --gold: #b8862e;
+        --gold-soft: #d9b264;
+        --line: #e6d7bf;
+        --chip-bg: #ffffff;
+        --shadow: 0 18px 40px -18px rgba(87, 16, 31, 0.35);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1e1310;
+          --surface: #2b1c16;
+          --surface-2: #35231b;
+          --ink: #f4e8d7;
+          --muted: #c3ab90;
+          --maroon: #c8506a;
+          --maroon-deep: #2a0d13;
+          --maroon-ink: #f7e9d2;
+          --gold: #d9a94e;
+          --gold-soft: #e5c078;
+          --line: #4a3325;
+          --chip-bg: #2b1c16;
+          --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+          color-scheme: dark;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Jost", system-ui, sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { display: block; max-width: 100%; }
+      button { font-family: inherit; cursor: pointer; }
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      .bn { font-family: "Hind Siliguri", "Jost", sans-serif; }
+      .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+
+      /* ---------- announcement + header ---------- */
+      .announce {
+        background: var(--maroon-deep);
+        color: var(--maroon-ink);
+        text-align: center;
+        font-size: 0.82rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.55rem 1rem;
+      }
+      .announce .bn { text-transform: none; letter-spacing: 0.02em; font-size: 0.95rem; }
+      header.site {
+        position: sticky; top: 0; z-index: 40;
+        background: color-mix(in srgb, var(--bg) 92%, transparent);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-in {
+        max-width: 1200px; margin: 0 auto;
+        display: flex; align-items: center; gap: 0.7rem;
+        padding: 0.7rem 1.1rem;
+      }
+      .brand { text-decoration: none; color: var(--ink); line-height: 1.05; margin-right: auto; display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+      .brand-logo { width: 4.9rem; height: 3.4rem; border-radius: 10px; object-fit: contain; background: #fff; border: 1px solid var(--gold); flex: none; padding: 0.15rem; }
+      .foot-logo { width: 10rem; height: 8.2rem; border-radius: 14px; object-fit: contain; background: #fff; border: 1px solid var(--gold); margin-bottom: 0.7rem; padding: 0.4rem; }
+      .brand .name { font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 1.65rem; letter-spacing: 0.01em; white-space: nowrap; }
+      .brand .name em { color: var(--maroon); font-style: normal; }
+      .brand .tag { display: block; font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--muted); margin-top: 0.15rem; }
+      @media (max-width: 560px) {
+        .brand .name { font-size: 1.3rem; }
+        .brand .tag { letter-spacing: 0.16em; font-size: 0.58rem; }
+        .brand-logo { width: 3.4rem; height: 2.5rem; }
+      }
+      nav.main { display: none; gap: 1.6rem; }
+      nav.main a {
+        color: var(--ink); text-decoration: none; font-size: 0.95rem; letter-spacing: 0.06em;
+        padding: 0.5rem 0.1rem; min-height: 2.25rem; display: inline-flex; align-items: center;
+      }
+      nav.main a:hover { color: var(--maroon); }
+      @media (min-width: 820px) { nav.main { display: flex; } }
+      .album-pill {
+        flex: none; display: inline-flex; align-items: center; gap: 0.45rem;
+        background: var(--maroon); color: #fff; border-radius: 999px;
+        padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em;
+        min-height: 2.75rem;
+      }
+      .album-pill svg { width: 17px; height: 17px; }
+      .ig-btn {
+        flex: none; display: inline-flex; align-items: center; justify-content: center;
+        width: 2.75rem; height: 2.75rem; border-radius: 999px;
+        border: 1px solid var(--line); background: var(--surface); color: var(--maroon);
+        text-decoration: none;
+      }
+      .ig-btn:hover { border-color: var(--gold); color: var(--gold); }
+      .ig-btn svg { width: 20px; height: 20px; }
+      @media (max-width: 560px) {
+        .album-pill { display: none !important; }
+        .header-in { gap: 0.5rem; padding: 0.6rem 0.8rem; }
+      }
+
+      /* ---------- hero ---------- */
+      .hero { background: var(--maroon-deep); color: var(--maroon-ink); overflow: hidden; }
+      .hero-in {
+        max-width: 1200px; margin: 0 auto;
+        display: grid; gap: 2rem; align-items: center;
+        padding: 2.6rem 1.1rem 3rem;
+      }
+      @media (min-width: 900px) { .hero-in { grid-template-columns: 1.05fr 0.95fr; padding: 3.6rem 1.1rem 4rem; } }
+      .hero .bn-line { color: var(--gold-soft); font-size: 1.15rem; letter-spacing: 0.04em; }
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif; font-weight: 600;
+        font-size: clamp(2.5rem, 6.5vw, 4.3rem); line-height: 1.02; margin: 0.6rem 0 1rem;
+      }
+      .hero h1 i { color: var(--gold-soft); }
+      .hero p.lede { font-size: 1.08rem; max-width: 34rem; color: color-mix(in srgb, var(--maroon-ink) 88%, transparent); margin: 0 0 1.6rem; }
+      .hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+      .btn-gold {
+        background: var(--gold); color: #241300; border: none; font-weight: 600;
+        padding: 0.8rem 1.6rem; border-radius: 999px; font-size: 1rem; min-height: 3rem;
+        text-decoration: none; display: inline-flex; align-items: center;
+      }
+      .btn-ghost {
+        background: transparent; color: var(--maroon-ink); border: 1px solid color-mix(in srgb, var(--maroon-ink) 55%, transparent);
+        padding: 0.8rem 1.4rem; border-radius: 999px; font-size: 1rem; min-height: 3rem;
+        text-decoration: none; display: inline-flex; align-items: center;
+      }
+      .hero-points { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; margin-top: 1.8rem; font-size: 0.92rem; color: color-mix(in srgb, var(--maroon-ink) 85%, transparent); }
+      .hero-points span { display: inline-flex; align-items: center; gap: 0.45rem; }
+      .hero-points svg { width: 16px; height: 16px; color: var(--gold-soft); flex: none; }
+      .hero-photo { position: relative; }
+      .hero-photo .arch {
+        border-radius: 999px 999px 14px 14px; overflow: hidden;
+        border: 1px solid color-mix(in srgb, var(--gold) 65%, transparent);
+        box-shadow: var(--shadow);
+        aspect-ratio: 4 / 3.1;
+      }
+      @media (min-width: 900px) { .hero-photo .arch { aspect-ratio: 4 / 4.6; } }
+      @media (max-width: 899px) {
+        .hero-in { padding: 1.7rem 1.1rem 2rem; gap: 1.3rem; }
+        .hero h1 { font-size: clamp(2.1rem, 11vw, 2.6rem); }
+        .hero p.lede { margin-bottom: 1.1rem; }
+        .hero-points { margin-top: 1.1rem; }
+        section { padding-top: 2rem; }
+      }
+      .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+      .hero-badge {
+        position: absolute; left: -0.4rem; bottom: 1.4rem;
+        background: var(--bg); color: var(--ink);
+        border-radius: 12px; padding: 0.7rem 1rem; box-shadow: var(--shadow);
+        font-size: 0.9rem; line-height: 1.3; max-width: 15rem;
+      }
+      .hero-badge strong { font-family: "Cormorant Garamond", serif; font-size: 1.15rem; color: var(--maroon); display: block; }
+
+      /* ---------- how this album works ---------- */
+      .album-note {
+        max-width: 1200px; margin: 0 auto; padding: 1.4rem 1.1rem 0;
+      }
+      .album-note-in {
+        display: grid; gap: 0.9rem;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+        padding: 1.1rem 1.2rem;
+      }
+      @media (min-width: 760px) { .album-note-in { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; } }
+      .note-item { display: flex; gap: 0.8rem; align-items: flex-start; }
+      .note-item .n {
+        flex: none; width: 2.4rem; height: 2.4rem; border-radius: 999px;
+        background: var(--surface-2); border: 1px solid var(--line); color: var(--maroon);
+        display: flex; align-items: center; justify-content: center;
+        font-family: "Cormorant Garamond", serif; font-weight: 700; font-size: 1.15rem;
+      }
+      .note-item h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+      .note-item p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.93rem; }
+
+      /* ---------- sections ---------- */
+      section { max-width: 1200px; margin: 0 auto; padding: 3rem 1.1rem 0.5rem; }
+      .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+      .sec-head h2 { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0; line-height: 1.05; }
+      .sec-head .sub { color: var(--muted); max-width: 38rem; margin: 0.35rem 0 0; }
+      .page-count {
+        flex: none; border: 1px solid var(--line); background: var(--surface);
+        border-radius: 999px; padding: 0.5rem 1rem; font-size: 0.9rem; color: var(--muted);
+      }
+      .page-count strong { color: var(--maroon); }
+      .ornament { display: flex; align-items: center; gap: 0.6rem; color: var(--gold); margin-bottom: 0.5rem; }
+      .ornament::before, .ornament::after { content: ""; height: 1px; width: 2.2rem; background: var(--gold); opacity: 0.7; }
+      .ornament svg { width: 13px; height: 13px; }
+
+      /* categories */
+      .cats { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
+      @media (min-width: 640px) { .cats { grid-template-columns: repeat(2, 1fr); } }
+      .cat {
+        position: relative; border: none; padding: 0; text-align: left; background: none;
+        border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 10.5; min-height: 0; width: 100%;
+      }
+      @media (min-width: 640px) { .cat { aspect-ratio: 3 / 3.6; } }
+      .cat img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+      .cat:hover img { transform: scale(1.05); }
+      .cat .veil { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38, 5, 12, 0.82) 0%, rgba(38, 5, 12, 0.15) 55%, transparent 100%); }
+      .cat .label { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.9rem 1rem; color: #fdf3e3; }
+      .cat .label .en { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; font-weight: 600; display: block; line-height: 1.05; }
+      .cat .label .bn { color: var(--gold-soft); font-size: 0.95rem; }
+      .cat .label .count { display: block; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.3rem; opacity: 0.85; }
+
+      /* filters + grid */
+      .chips { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.5rem; }
+      .chip {
+        background: var(--chip-bg); color: var(--ink); border: 1px solid var(--line);
+        border-radius: 999px; padding: 0.55rem 1.15rem; font-size: 0.95rem; min-height: 2.75rem;
+      }
+      .chip[aria-pressed="true"] { background: var(--maroon); border-color: var(--maroon); color: #fff; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      @media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; } }
+      @media (max-width: 380px) { .grid { grid-template-columns: 1fr; } }
+      .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+      .card .photo { position: relative; aspect-ratio: 3 / 3.7; overflow: hidden; background: var(--surface-2); }
+      .card .photo img { width: 100%; height: 100%; object-fit: cover; }
+      .badge {
+        position: absolute; top: 0.7rem; left: 0.7rem;
+        background: var(--maroon); color: #fff; font-size: 0.72rem; font-weight: 600;
+        letter-spacing: 0.1em; text-transform: uppercase; padding: 0.32rem 0.6rem; border-radius: 999px;
+      }
+      .badge.gold { background: var(--gold); color: #241300; }
+      .page-no {
+        position: absolute; top: 0.7rem; right: 0.7rem;
+        background: rgba(24, 4, 9, 0.82); color: #fdf3e3;
+        font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+        padding: 0.32rem 0.6rem; border-radius: 999px;
+      }
+      .card .body { padding: 0.95rem 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.25rem; flex: 1; }
+      .card .cat-name { font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+      .card h3 { font-family: "Cormorant Garamond", serif; font-size: 1.32rem; font-weight: 600; margin: 0; line-height: 1.15; }
+      .card .detail { color: var(--muted); font-size: 0.9rem; margin: 0; }
+      .card .meta-row { display: flex; align-items: center; gap: 0.5rem; margin-top: auto; padding-top: 0.85rem; flex-wrap: wrap; }
+      .price { font-size: 1.15rem; font-weight: 600; }
+      .size-chip {
+        border: 1px solid var(--line); background: var(--surface-2); color: var(--ink);
+        border-radius: 999px; padding: 0.3rem 0.7rem; font-size: 0.85rem; font-weight: 500;
+      }
+      .view-link {
+        margin-left: auto; color: var(--maroon); font-size: 0.9rem; font-weight: 600;
+        display: inline-flex; align-items: center; gap: 0.3rem;
+      }
+      .sample-note { color: var(--muted); font-size: 0.92rem; margin-top: 1.2rem; }
+      .empty-album { grid-column: 1 / -1; background: var(--surface); border: 1px dashed var(--line); border-radius: 16px; padding: 2.2rem 1.4rem; text-align: center; }
+      .empty-album .bn { display: block; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.3rem; }
+      .empty-album p { color: var(--muted); margin: 0; }
+      .card .photo[data-gallery] { cursor: pointer; }
+      .photo-tag {
+        position: absolute; bottom: 0.7rem; left: 0.7rem;
+        background: rgba(24, 4, 9, 0.8); color: #fdf3e3;
+        font-size: 0.78rem; letter-spacing: 0.03em; padding: 0.32rem 0.65rem; border-radius: 999px;
+      }
+
+      /* ---------- product photo gallery ---------- */
+      .gallery {
+        position: fixed; inset: 0; z-index: 90;
+        background: var(--bg); color: var(--ink);
+        display: none; flex-direction: column;
+      }
+      .gallery.open { display: flex; }
+      .gallery header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.1rem; border-bottom: 1px solid var(--line); }
+      .gallery header h3 { font-family: "Cormorant Garamond", serif; font-size: 1.45rem; margin: 0; font-weight: 600; line-height: 1.15; }
+      .gallery header .g-sub { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0; }
+      .close-btn { background: none; border: 1px solid var(--line); border-radius: 999px; width: 2.75rem; height: 2.75rem; font-size: 1.1rem; color: var(--ink); flex: none; }
+      .gallery-nav { display: flex; gap: 0.5rem; justify-content: center; padding: 0.2rem 1rem 0; }
+      .gallery-nav button {
+        border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+        border-radius: 999px; padding: 0.5rem 1.1rem; font-size: 0.92rem; min-height: 2.75rem; font-weight: 500;
+      }
+      .gallery-main { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 0.8rem 1.1rem 0.3rem; }
+      .gallery-main img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 12px; }
+      .gallery-meta { display: flex; justify-content: center; gap: 0.5rem 1.2rem; flex-wrap: wrap; padding: 0.45rem 1rem 0; color: var(--muted); font-size: 0.92rem; text-align: center; }
+      .gallery-meta .g-size { color: var(--maroon); font-weight: 600; }
+      .gallery-meta .g-price { color: var(--ink); font-weight: 600; }
+      .gallery-detail { max-width: 42rem; margin: 0 auto; padding: 0.35rem 1.2rem 0; color: var(--muted); font-size: 0.93rem; text-align: center; }
+      .gallery-thumbs { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; padding: 0.7rem 1rem 1.2rem; }
+      .gallery-thumbs button { border: 2px solid var(--line); background: none; padding: 0; border-radius: 10px; overflow: hidden; width: 4.3rem; height: 5.3rem; }
+      .gallery-thumbs button[aria-pressed="true"] { border-color: var(--maroon); }
+      .gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+      /* story */
+      .story { display: grid; gap: 1.6rem; align-items: center; }
+      @media (min-width: 900px) { .story { grid-template-columns: 0.9fr 1.1fr; gap: 3rem; } }
+      .story .photo { border-radius: 14px; overflow: hidden; aspect-ratio: 3 / 3.4; box-shadow: var(--shadow); }
+      .story .photo img { width: 100%; height: 100%; object-fit: cover; }
+      .story h2 { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0 0 0.8rem; line-height: 1.08; }
+      .story p { color: var(--muted); margin: 0 0 1rem; max-width: 36rem; }
+      .story p strong { color: var(--ink); }
+      .values { display: grid; gap: 0.9rem; margin-top: 1.4rem; }
+      .value { display: flex; gap: 0.9rem; align-items: flex-start; }
+      .value .ic {
+        flex: none; width: 2.6rem; height: 2.6rem; border-radius: 10px;
+        background: var(--surface-2); border: 1px solid var(--line);
+        display: flex; align-items: center; justify-content: center; color: var(--maroon);
+      }
+      .value .ic svg { width: 20px; height: 20px; }
+      .value h4 { margin: 0; font-size: 1rem; font-weight: 600; }
+      .value p { margin: 0.1rem 0 0; font-size: 0.94rem; }
+
+      /* occasions strip */
+      .occasions { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 3.2rem; }
+      .occasions-in { max-width: 1200px; margin: 0 auto; padding: 2.2rem 1.1rem; display: grid; gap: 1.2rem; }
+      @media (min-width: 820px) { .occasions-in { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+      .occ h3 { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; margin: 0 0 0.3rem; font-weight: 600; }
+      .occ h3 .bn { color: var(--maroon); font-size: 1.05rem; }
+      .occ p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+      /* footer */
+      footer { max-width: 1200px; margin: 0 auto; padding: 3rem 1.1rem 2.4rem; }
+      .foot-grid { display: grid; gap: 1.8rem; }
+      @media (min-width: 820px) { .foot-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+      footer h4 { font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.8rem; }
+      footer a { color: var(--ink); text-decoration: none; display: inline-block; padding: 0.3rem 0; min-height: 2rem; }
+      footer a:hover { color: var(--maroon); }
+      .foot-brand { font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-weight: 700; }
+      .foot-brand em { color: var(--maroon); font-style: normal; }
+      .foot-note { border-top: 1px solid var(--line); margin-top: 2.2rem; padding-top: 1.2rem; color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; justify-content: space-between; }
+      .social-link {
+        display: inline-flex; align-items: center; gap: 0.55rem; margin-top: 1rem;
+        border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+        padding: 0.55rem 1.15rem !important; min-height: 2.75rem; font-weight: 500;
+      }
+      .social-link:hover { border-color: var(--gold); }
+      .social-link svg { width: 20px; height: 20px; color: var(--maroon); flex: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; }
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="announce">Desi Romoni Album · Just for looking — browse every piece &nbsp;·&nbsp; <span class="bn">ঈদ ও পূজার নতুন কালেকশন এসেছে</span></div>
+
+    <header class="site">
+      <div class="header-in">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="asset-01.png" alt="" />
+          <span>
+            <span class="name">Desi <em>Romoni</em></span>
+            <span class="tag">Bengali Women's Clothing · USA</span>
+          </span>
+        </a>
+        <nav class="main" aria-label="Album">
+          <a href="#album">Album</a>
+          <a href="#collections">Collections</a>
+          <a href="#story">Our Story</a>
+        </nav>
+        <span class="album-pill" aria-label="This is the album">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg>
+          Album
+        </span>
+        <a class="ig-btn" href="https://www.instagram.com/desi.romoni.usa" target="_blank" rel="noopener" aria-label="Desi Romoni on Instagram — @desi.romoni.usa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.7" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="ig-btn" href="https://www.tiktok.com/@desi.romoni.usa" target="_blank" rel="noopener" aria-label="Desi Romoni on TikTok — @desi.romoni.usa">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-in">
+          <div>
+            <span class="bn-line bn">দেশি রমণী — বাংলার ঐতিহ্য, আপনার দরজায়</span>
+            <h1>The Desi Romoni <i>album</i> — every piece, page by page</h1>
+            <p class="lede">A photo album of our clothes, made just for looking: handwoven Jamdani sarees and embroidered salwar kameez. Flip through the pages, tap any set to see all its photos up close. There's nothing to buy here — it's only the clothes, to enjoy looking at.</p>
+            <div class="hero-cta">
+              <a class="btn-gold" href="#album">Browse the album</a>
+              <a class="btn-ghost" href="#story">Our story</a>
+            </div>
+            <div class="hero-points">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg> 16 pages · 4 sarees + 12 sets</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg> Authentic handloom fabric</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="3"/></svg> Tap a photo to view it large</span>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <div class="arch"><img src="asset-03.jpg" alt="Deep plum Jamdani saree with gold, silver and copper woven motifs, beaded gold border and handmade tassels, folded flat with its matching blouse piece" fetchpriority="high" /></div>
+            <div class="hero-badge"><strong>In this album</strong> Our first 4 Jamdani sarees and 12 salwar kameez sets — every photo included.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW TO USE THE ALBUM -->
+      <div class="album-note" aria-label="How to use this album">
+        <div class="album-note-in">
+          <div class="note-item"><span class="n">1</span><div><h3>Browse the pages</h3><p>Scroll through all 16 pieces, or use the Sarees / Salwar Kameez tabs to jump to one collection.</p></div></div>
+          <div class="note-item"><span class="n">2</span><div><h3>Tap to see every photo</h3><p>Each kameez set has 3–5 photos — the full outfit, the folded view, the dupatta and the pants. Tap the photo to open them.</p></div></div>
+          <div class="note-item"><span class="n">3</span><div><h3>Remember the page number</h3><p>Every page is numbered — Page 01 to Page 16 — so you can find a favourite again and show it to family.</p></div></div>
+        </div>
+      </div>
+
+      <!-- ALBUM -->
+      <section id="album">
+        <div class="sec-head">
+          <div>
+            <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+            <h2>The album <span class="bn" style="font-size: 1.3rem; color: var(--maroon);">শাড়ি ও সালোয়ার কামিজ</span></h2>
+            <p class="sub">Our 4 real Jamdani sarees — $109.99 each, blouse piece included — plus our 12 salwar kameez sets. Prices and sizes are printed on each page just so you know the piece; the album itself is only for looking through. Tap a set's photo to see all its pictures.</p>
+          </div>
+          <span class="page-count" id="pageCount"><strong>16</strong> pages</span>
+        </div>
+        <div class="chips" role="group" aria-label="Filter album">
+          <button class="chip" data-filter="all" aria-pressed="true">All pieces</button>
+          <button class="chip" data-filter="sarees" aria-pressed="false">Sarees</button>
+          <button class="chip" data-filter="kameez" aria-pressed="false">Salwar Kameez</button>
+        </div>
+        <div class="grid" id="grid"></div>
+        <p class="sample-note">These are our real pieces — the four sarees at $109.99 each with blouse piece included, and our 12 salwar kameez sets (black set size 42 at $74.99, orange floral set size 44 at $74.99, mustard set size 44 at $74.99, white set size 46 at $74.99, white &amp; gold set size 44 at $74.99, white &amp; red set size 42 at $74.99, lavender set size 46 at $74.99, golden set size 44 at $74.99, navy &amp; teal set size 46 at $74.99, mustard &amp; green printed set size 42 at $69.99, grey floral set size 46 at $59.99, navy &amp; cream printed set size 46 at $59.99). More pieces will be added.</p>
+      </section>
+
+      <!-- COLLECTIONS -->
+      <section id="collections">
+        <div class="sec-head">
+          <div>
+            <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+            <h2>Browse by collection</h2>
+            <p class="sub">Our first four sarees and our 12 salwar kameez sets are in the album above. Tap a collection to see just those pages.</p>
+          </div>
+        </div>
+        <div class="cats">
+          <button class="cat" data-goto-filter="sarees">
+            <img src="asset-03.jpg" alt="Deep plum Jamdani saree with gold motifs and tassels, folded with its blouse piece" />
+            <span class="veil"></span>
+            <span class="label"><span class="en">Sarees</span><span class="bn">শাড়ি</span><span class="count">4 pieces in the album · more coming</span></span>
+          </button>
+          <button class="cat" data-goto-filter="kameez">
+            <img src="asset-05.jpg" alt="Black Jamdani kameez laid out in full, with woven white motifs, patterned cuffs and hem" />
+            <span class="veil"></span>
+            <span class="label"><span class="en">Salwar Kameez</span><span class="bn">সালোয়ার কামিজ</span><span class="count">12 sets in the album</span></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section id="story">
+        <div class="story">
+          <div class="photo"><img src="asset-06.jpg" alt="Black Jamdani saree with gold and silver woven motifs and gold, silver and black tassels, folded flat" /></div>
+          <div>
+            <div class="ornament"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+            <h2>Woven in Bengal, worn with pride in the USA</h2>
+            <p><strong>Desi Romoni</strong> <span class="bn">(দেশি রমণী — "woman of the homeland")</span> brings the clothing Bengali women grow up loving to doorsteps across America. The feather-light <strong>Jamdani</strong> of Dhaka's looms, the classic white-and-red <strong>laal-paar</strong> saree worn at Durga Puja, soft muslin that breathes through summer — pieces that carry home with them.</p>
+            <p>Whether it's Eid morning, a wedding in Queens, or Boishakh at the park, dress like it matters — because to us, it does.</p>
+            <div class="values">
+              <div class="value">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20c8 0 16-8 16-16-8 0-16 8-16 16z"/><path d="M4 20c2-6 6-10 10-12"/></svg></span>
+                <div><h4>Real handloom, real weavers</h4><p>Jamdani and muslin sourced from Bengal's weaving traditions — no printed imitations passed off as handwoven.</p></div>
+              </div>
+              <div class="value">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5-9 9"/></svg></span>
+                <div><h4>Every photo is the real piece</h4><p>What you see in this album is the exact saree or set — folded, laid out, dupatta and pants included in the photos.</p></div>
+              </div>
+              <div class="value">
+                <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7L9.5 17.5 4 12"/></svg></span>
+                <div><h4>Blouse piece included</h4><p>Every saree comes with its matching blouse piece, and kameez sets arrive as complete three-pieces with dupatta.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OCCASIONS -->
+      <div class="occasions">
+        <div class="occasions-in">
+          <div class="occ"><h3>Eid <span class="bn">ঈদ</span></h3><p>Embroidered three-pieces and soft muslin sarees for Eid morning and every dawat after.</p></div>
+          <div class="occ"><h3>Durga Puja <span class="bn">দুর্গা পূজা</span></h3><p>The laal-paar look, done right — white saree, red border, ready for sindoor khela.</p></div>
+          <div class="occ"><h3>Weddings <span class="bn">বিয়ে</span></h3><p>Rich Jamdani sarees and embroidered kameez sets for the bride, her sisters, and every guest who wants to shine.</p></div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="foot-grid">
+        <div>
+          <img class="foot-logo" src="asset-01.png" alt="Desi Romoni logo — maroon and gold paisley motifs with lotus flowers above the words Desi Romoni" />
+          <div class="foot-brand">Desi <em>Romoni</em></div>
+          <p style="color: var(--muted); max-width: 22rem; margin: 0.5rem 0 0;">Bengali traditional clothing for women — sarees and salwar kameez. This is our photo album: every piece we have, page by page, just to look through.</p>
+          <p class="bn" style="color: var(--muted); margin: 0.6rem 0 0;">বাংলার ঐতিহ্য, এখন আমেরিকায়</p>
+          <a class="social-link" href="mailto:desiromoni@gmail.com" aria-label="Email Desi Romoni at desiromoni@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            desiromoni@gmail.com
+          </a>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+            <a class="social-link" href="https://www.instagram.com/desi.romoni.usa" target="_blank" rel="noopener" aria-label="Desi Romoni on Instagram — @desi.romoni.usa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.7" fill="currentColor" stroke="none"/></svg>
+              Instagram · @desi.romoni.usa
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/@desi.romoni.usa" target="_blank" rel="noopener" aria-label="Desi Romoni on TikTok — @desi.romoni.usa">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              TikTok · @desi.romoni.usa
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4>Album</h4>
+          <a href="#album">All pages</a><br />
+          <a href="#collections">Sarees</a><br />
+          <a href="#collections">Salwar Kameez</a>
+        </div>
+        <div>
+          <h4>Good to know</h4>
+          <a href="#story">Our story</a><br />
+          <a href="#album">Prices &amp; sizes on each page</a><br />
+          <a href="#album">Back to the album</a>
+        </div>
+      </div>
+      <div class="foot-note">
+        <span>© 2026 Desi Romoni · Bengali women's clothing in the USA</span>
+        <span>Album · 4 sarees &amp; 12 salwar kameez sets</span>
+      </div>
+    </footer>
+
+    <!-- PHOTO VIEWER -->
+    <div class="gallery" id="gallery" role="dialog" aria-label="Album photos" aria-hidden="true">
+      <header>
+        <div>
+          <h3 id="galleryTitle"></h3>
+          <p class="g-sub" id="gallerySub"></p>
+        </div>
+        <button class="close-btn" id="galleryClose" aria-label="Close photos">✕</button>
+      </header>
+      <div class="gallery-main"><img id="galleryImg" src="asset-05.jpg" alt="Black Jamdani kameez laid out in full, with woven white motifs, patterned cuffs and hem" /></div>
+      <div class="gallery-meta"><span id="galleryCounter"></span><span class="g-size" id="gallerySize"></span><span class="g-price" id="galleryPrice"></span></div>
+      <p class="gallery-detail" id="galleryDetail"></p>
+      <div class="gallery-nav">
+        <button id="galleryPrev" type="button">← Previous photo</button>
+        <button id="galleryNext" type="button">Next photo →</button>
+      </div>
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+    </div>
+
+    <script>
+      var PRODUCTS = [
+        { id: "plum-jamdani", name: "Plum Jamdani Saree", bn: "জামদানি শাড়ি", cat: "sarees", catLabel: "Saree", detail: "Deep plum Jamdani with gold, silver & copper woven motifs, beaded gold border and handmade tassels · blouse piece included", price: 109.99, img: "asset-03.jpg", alt: "Deep plum Jamdani saree with gold woven motifs and tassels, folded flat with its matching blouse piece", badge: "New", badgeGold: true,
+          gallery: [ { src: "asset-03.jpg", alt: "Deep plum Jamdani saree with gold woven motifs and tassels, folded flat with its matching blouse piece" } ] },
+        { id: "black-mustard-jamdani", name: "Black & Mustard Jamdani Saree", bn: "জামদানি শাড়ি", cat: "sarees", catLabel: "Saree", detail: "Black Jamdani with mustard & gold woven motifs and a sequinned mustard pallu with black-and-gold tassels · blouse piece included", price: 109.99, img: "asset-11.jpg", alt: "Black and mustard yellow Jamdani saree with gold woven motifs and tassels, folded flat with its black blouse piece", badge: "New", badgeGold: true,
+          gallery: [ { src: "asset-11.jpg", alt: "Black and mustard yellow Jamdani saree with gold woven motifs and tassels, folded flat with its black blouse piece" } ] },
+        { id: "teal-magenta-jamdani", name: "Teal & Magenta Jamdani Saree", bn: "জামদানি শাড়ি", cat: "sarees", catLabel: "Saree", detail: "Teal blue Jamdani with magenta woven motifs, gold beadwork and red-and-blue tassels · blouse piece included", price: 109.99, img: "asset-13.jpg", alt: "Teal blue and magenta Jamdani saree with gold beadwork and red and blue tassels, folded flat with its blue blouse piece", badge: "New", badgeGold: true,
+          gallery: [ { src: "asset-13.jpg", alt: "Teal blue and magenta Jamdani saree with gold beadwork and red and blue tassels, folded flat with its blue blouse piece" } ] },
+        { id: "black-gold-jamdani", name: "Black & Gold Jamdani Saree", bn: "জামদানি শাড়ি", cat: "sarees", catLabel: "Saree", detail: "Black Jamdani with gold & silver woven motifs and gold, silver & black tassels on a satin-edged pallu · blouse piece included", price: 109.99, img: "asset-06.jpg", alt: "Black Jamdani saree with gold and silver woven motifs and gold, silver and black tassels, folded flat", badge: "New", badgeGold: true,
+          gallery: [ { src: "asset-06.jpg", alt: "Black Jamdani saree with gold and silver woven motifs and gold, silver and black tassels, folded flat" } ] },
+        { id: "black-jamdani-kameez", name: "Black Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Black Jamdani kameez with white & gold woven motifs, matching black salwar pants and woven dupatta · Size 42", price: 74.99, size: "42", img: "asset-05.jpg", alt: "Black Jamdani kameez laid out in full, with woven white motifs, patterned cuffs and hem", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-05.jpg", alt: "Black Jamdani kameez laid out in full, with woven white motifs, patterned cuffs and hem" },
+            { src: "asset-19.jpg", alt: "Black Jamdani kameez folded flat, showing the woven neckline pattern in white and gold" },
+            { src: "asset-20.jpg", alt: "Close-up of the black Jamdani kameez neckline with white and gold woven diamond pattern" },
+            { src: "asset-21.jpg", alt: "Matching plain black salwar pants with elastic waist, laid flat next to the kameez" },
+            { src: "asset-22.jpg", alt: "Black Jamdani dupatta with white and gold woven pattern and black tassel fringe, folded flat" }
+          ] },
+        { id: "orange-floral-kameez", name: "Orange Floral Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Orange & magenta floral kameez with matching floral salwar pants and a black geometric dupatta with floral border · Size 44", price: 74.99, size: "44", img: "asset-23.jpg", alt: "Orange floral kameez laid out in full, with short sleeves and a patterned hem border", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-23.jpg", alt: "Orange floral kameez laid out in full, with short sleeves and a patterned hem border" },
+            { src: "asset-25.jpg", alt: "Orange floral kameez folded flat, showing the bold orange and magenta floral print" },
+            { src: "asset-26.jpg", alt: "Dupatta with black and white geometric pattern and an orange floral border, folded flat" },
+            { src: "asset-27.jpg", alt: "Matching orange floral salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "mustard-jamdani-kameez", name: "Mustard Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Mustard Jamdani kameez with navy, red, green & white woven motifs, matching mustard dupatta and plain mustard salwar pants · Size 44", price: 74.99, size: "44", img: "asset-28.jpg", alt: "Mustard Jamdani kameez laid out in full, with woven neckline, patterned sleeve cuffs and hem border", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-28.jpg", alt: "Mustard Jamdani kameez laid out in full, with woven neckline, patterned sleeve cuffs and hem border" },
+            { src: "asset-30.jpg", alt: "Mustard Jamdani kameez folded flat, showing the woven neckline pattern in navy, red, white and green" },
+            { src: "asset-31.jpg", alt: "Mustard Jamdani dupatta laid flat, with small red and green floral woven motifs and a patterned border" },
+            { src: "asset-32.jpg", alt: "Matching plain mustard salwar pants with elastic ankle, laid flat" }
+          ] },
+        { id: "white-jamdani-kameez", name: "White Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "White Jamdani kameez with black, mustard, green & magenta woven motifs, matching white patterned dupatta and plain black salwar pants · Size 46", price: 74.99, size: "46", img: "asset-33.jpg", alt: "White Jamdani kameez laid out in full, with woven neckline diamond, patterned sleeve cuffs and hem border in black, mustard, green and magenta", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-33.jpg", alt: "White Jamdani kameez laid out in full, with woven neckline diamond, patterned sleeve cuffs and hem border in black, mustard, green and magenta" },
+            { src: "asset-35.jpg", alt: "White Jamdani kameez folded flat, showing the woven neckline pattern in black and mustard yellow" },
+            { src: "asset-36.jpg", alt: "White Jamdani dupatta folded flat, with black diamond pattern, small green, pink and mustard motifs and white tassel fringe" },
+            { src: "asset-37.jpg", alt: "Matching plain black salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "white-gold-jamdani-kameez", name: "White & Gold Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "White Jamdani kameez with black & gold woven motifs, matching white patterned dupatta and plain white salwar pants · Size 44", price: 74.99, size: "44", img: "asset-38.jpg", alt: "White and gold Jamdani kameez laid out in full, with woven neckline diamond, small black motifs, patterned sleeve cuffs and hem border in black and gold", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-38.jpg", alt: "White and gold Jamdani kameez laid out in full, with woven neckline diamond, small black motifs, patterned sleeve cuffs and hem border in black and gold" },
+            { src: "asset-40.jpg", alt: "White and gold Jamdani kameez folded flat, showing the woven neckline pattern in black and pale gold" },
+            { src: "asset-41.jpg", alt: "White Jamdani dupatta folded flat, with black diamond lattice pattern, gold woven centers, black leaf border and white tassel fringe" },
+            { src: "asset-42.jpg", alt: "Matching plain white salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "white-red-jamdani-kameez", name: "White & Red Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "White Jamdani kameez with red, yellow & green woven motifs, matching white patterned dupatta and plain white salwar pants · Size 42", price: 74.99, size: "42", img: "asset-43.jpg", alt: "White and red Jamdani kameez laid out in full, with woven neckline diamond, patterned sleeve cuffs and hem border in red, yellow and green", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-43.jpg", alt: "White and red Jamdani kameez laid out in full, with woven neckline diamond, patterned sleeve cuffs and hem border in red, yellow and green" },
+            { src: "asset-45.jpg", alt: "White and red Jamdani kameez folded flat, showing the woven neckline pattern in red and yellow with red buttons" },
+            { src: "asset-46.jpg", alt: "White Jamdani dupatta folded flat, with red lattice pattern, yellow and green woven motifs, red border and white tassel fringe" },
+            { src: "asset-47.jpg", alt: "Matching plain white salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "lavender-jamdani-kameez", name: "Lavender Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Lavender Jamdani kameez with white, green, red & yellow woven motifs, matching lavender patterned dupatta and plain lavender salwar pants · Size 46", price: 74.99, size: "46", img: "asset-48.jpg", alt: "Lavender Jamdani kameez laid out in full, with woven neckline, patterned sleeve cuffs and hem border in white, green, red and yellow", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-48.jpg", alt: "Lavender Jamdani kameez laid out in full, with woven neckline, patterned sleeve cuffs and hem border in white, green, red and yellow" },
+            { src: "asset-50.jpg", alt: "Lavender Jamdani kameez folded flat, showing the woven neckline pattern in white, green, red and yellow" },
+            { src: "asset-51.jpg", alt: "Lavender Jamdani dupatta folded flat, with white and red woven pattern, red stripe and white tassel fringe" },
+            { src: "asset-52.jpg", alt: "Matching plain lavender salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "golden-jamdani-kameez", name: "Golden Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Golden Jamdani kameez with gold & white woven motifs, matching golden striped dupatta with black tassels and plain golden salwar pants · Size 44", price: 74.99, size: "44", img: "asset-53.jpg", alt: "Golden Jamdani kameez laid out in full, with gold woven neckline, patterned sleeve cuffs and hem border and small white and gold motifs", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-53.jpg", alt: "Golden Jamdani kameez laid out in full, with gold woven neckline, patterned sleeve cuffs and hem border and small white and gold motifs" },
+            { src: "asset-55.jpg", alt: "Golden Jamdani kameez folded flat, showing the woven neckline pattern in gold and white with mustard trim and fabric buttons" },
+            { src: "asset-56.jpg", alt: "Golden dupatta folded flat, with white stripes, a gold woven border and black tassel fringe" },
+            { src: "asset-57.jpg", alt: "Matching plain golden salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "navy-jamdani-kameez", name: "Navy & Teal Jamdani Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Navy Jamdani kameez with teal & gold woven motifs, matching navy patterned dupatta with black tassels and plain navy salwar pants · Size 46", price: 74.99, size: "46", img: "asset-58.jpg", alt: "Navy and teal Jamdani kameez laid out in full, with teal woven neckline diamond, patterned sleeve cuffs and hem border and small teal and gold motifs", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-58.jpg", alt: "Navy and teal Jamdani kameez laid out in full, with teal woven neckline diamond, patterned sleeve cuffs and hem border and small teal and gold motifs" },
+            { src: "asset-60.jpg", alt: "Navy and teal Jamdani kameez folded flat, showing the woven neckline pattern in teal and gold with teal fabric buttons" },
+            { src: "asset-61.jpg", alt: "Navy Jamdani dupatta folded flat, with teal cross pattern, gold woven motifs, teal border and black tassel fringe" },
+            { src: "asset-62.jpg", alt: "Matching plain navy salwar pants with elastic waist, laid flat" }
+          ] },
+        { id: "mustard-green-kameez", name: "Mustard & Green Printed Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Mustard yellow kameez with dark green swirling print and cream circular motifs, matching mustard lattice-pattern salwar pants and green dupatta with white diamond print and floral border · Size 42", price: 69.99, size: "42", img: "asset-63.jpg", alt: "Mustard yellow printed kameez laid out in full, with green neckline pattern, patterned sleeve cuffs and hem border in green and grey", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-63.jpg", alt: "Mustard yellow printed kameez laid out in full, with green neckline pattern, patterned sleeve cuffs and hem border in green and grey" },
+            { src: "asset-65.jpg", alt: "Mustard yellow printed kameez folded flat, showing the dark green swirling neckline pattern and cream circular motifs" },
+            { src: "asset-66.jpg", alt: "Matching mustard and cream lattice-pattern salwar pants with elastic waist, laid flat" },
+            { src: "asset-67.jpg", alt: "Green dupatta folded flat, with white diamond print and black and grey floral border" }
+          ] },
+        { id: "grey-floral-kameez", name: "Grey Floral Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Grey kameez with red, pink & orange floral bouquets and black patterned border, matching taupe salwar pants and black dupatta with pink & orange floral print · Size 46", price: 59.99, size: "46", img: "asset-68.jpg", alt: "Grey floral kameez laid out in full, with red, pink and orange floral bouquets, patterned sleeve cuffs and hem border", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-68.jpg", alt: "Grey floral kameez laid out in full, with red, pink and orange floral bouquets, patterned sleeve cuffs and hem border" },
+            { src: "asset-70.jpg", alt: "Matching taupe salwar pants with elastic waist and patterned ankle cuff, laid flat" },
+            { src: "asset-71.jpg", alt: "Black dupatta folded flat, with pink and orange floral print and white leaf motifs" }
+          ] },
+        { id: "navy-printed-kameez", name: "Navy & Cream Printed Salwar Kameez Set", bn: "সালোয়ার কামিজ", cat: "kameez", catLabel: "Salwar Kameez", detail: "Navy kameez with cream, red & gold ornate print, beige floral panels and a pink & yellow floral neckline placket, matching cream & navy patterned dupatta with small floral print and plain navy salwar pants · Size 46", price: 59.99, size: "46", img: "asset-72.jpg", alt: "Navy printed kameez laid out in full, with cream, red and gold ornate print, beige floral panels, pink and yellow floral neckline placket and patterned hem border", badge: "New", badgeGold: true,
+          gallery: [
+            { src: "asset-72.jpg", alt: "Navy printed kameez laid out in full, with cream, red and gold ornate print, beige floral panels, pink and yellow floral neckline placket and patterned hem border" },
+            { src: "asset-74.jpg", alt: "Navy printed kameez folded flat, showing the pink and yellow floral band and cream, navy and gold geometric neckline pattern" },
+            { src: "asset-75.jpg", alt: "Cream and navy dupatta folded flat, with gold geometric pattern, pink paisley border and navy small floral print" },
+            { src: "asset-76.jpg", alt: "Matching plain navy salwar pants with elastic waist, laid flat" }
+          ] }
+      ];
+
+      var grid = document.getElementById("grid");
+      var pageCountEl = document.getElementById("pageCount");
+
+      function money(n) { return "$" + n.toFixed(2); }
+      function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+      function renderGrid(filter) {
+        grid.innerHTML = "";
+        var shown = 0;
+        PRODUCTS.forEach(function (p, idx) {
+          if (filter !== "all" && p.cat !== filter) return;
+          shown++;
+          var pageNo = idx + 1;
+          var card = document.createElement("article");
+          card.className = "card";
+          var photoCount = p.gallery ? p.gallery.length : 1;
+          var photoLabel = photoCount > 1 ? photoCount + " photos · tap to view" : "Tap to view large";
+          card.innerHTML =
+            '<div class="photo" data-gallery="' + p.id + '" role="button" tabindex="0" aria-label="View photos of ' + p.name + ' — album page ' + pageNo + '">' +
+            '<img src="' + p.img + '" alt="' + p.alt + '" />' +
+            (p.badge ? '<span class="badge' + (p.badgeGold ? " gold" : "") + '">' + p.badge + "</span>" : "") +
+            '<span class="page-no">Page ' + pad(pageNo) + " / 16</span>" +
+            '<span class="photo-tag">' + photoLabel + "</span>" +
+            "</div>" +
+            '<div class="body">' +
+            '<span class="cat-name">' + p.catLabel + ' · <span class="bn">' + p.bn + "</span></span>" +
+            "<h3>" + p.name + "</h3>" +
+            '<p class="detail">' + p.detail + "</p>" +
+            '<div class="meta-row"><span class="price">' + money(p.price) + "</span>" +
+            (p.size ? '<span class="size-chip">Size ' + p.size + "</span>" : '<span class="size-chip">Blouse piece incl.</span>') +
+            '<span class="view-link">View photos →</span></div>' +
+            "</div>";
+          grid.appendChild(card);
+        });
+        if (pageCountEl) {
+          pageCountEl.innerHTML = "<strong>" + shown + "</strong> " + (shown === 1 ? "page" : "pages") + (filter === "all" ? " · full album" : "");
+        }
+        if (shown === 0) {
+          var empty = document.createElement("div");
+          empty.className = "empty-album";
+          empty.innerHTML = '<span class="bn">আরও আসছে</span><p>More pages are on the way.</p>';
+          grid.appendChild(empty);
+        }
+        grid.querySelectorAll("[data-gallery]").forEach(function (el) {
+          el.addEventListener("click", function () { openGallery(el.getAttribute("data-gallery")); });
+          el.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openGallery(el.getAttribute("data-gallery")); }
+          });
+        });
+      }
+
+      function setFilter(filter, scroll) {
+        document.querySelectorAll(".chip").forEach(function (c) {
+          c.setAttribute("aria-pressed", c.getAttribute("data-filter") === filter ? "true" : "false");
+        });
+        renderGrid(filter);
+        if (scroll) document.getElementById("album").scrollIntoView({ behavior: "smooth" });
+      }
+
+      document.querySelectorAll(".chip").forEach(function (c) {
+        c.addEventListener("click", function () { setFilter(c.getAttribute("data-filter"), false); });
+      });
+      document.querySelectorAll("[data-goto-filter]").forEach(function (el) {
+        el.addEventListener("click", function () { setFilter(el.getAttribute("data-goto-filter"), true); });
+      });
+
+      /* ---------- photo viewer ---------- */
+      var galleryEl = document.getElementById("gallery");
+      var galleryImg = document.getElementById("galleryImg");
+      var galleryThumbs = document.getElementById("galleryThumbs");
+      var galleryPhotos = [];
+      var galleryIndex = 0;
+      var galleryProduct = null;
+
+      function showGalleryPhoto(i) {
+        if (!galleryPhotos.length) return;
+        galleryIndex = (i + galleryPhotos.length) % galleryPhotos.length;
+        galleryImg.src = galleryPhotos[galleryIndex].src;
+        galleryImg.alt = galleryPhotos[galleryIndex].alt;
+        document.getElementById("galleryCounter").textContent = "Photo " + (galleryIndex + 1) + " of " + galleryPhotos.length;
+        galleryThumbs.querySelectorAll("button").forEach(function (b, j) {
+          b.setAttribute("aria-pressed", j === galleryIndex ? "true" : "false");
+        });
+        var navHidden = galleryPhotos.length <= 1;
+        document.getElementById("galleryPrev").style.display = navHidden ? "none" : "";
+        document.getElementById("galleryNext").style.display = navHidden ? "none" : "";
+        galleryThumbs.style.display = navHidden ? "none" : "";
+      }
+
+      function openGallery(id) {
+        var p = null, idx = -1;
+        PRODUCTS.forEach(function (x, i) { if (x.id === id) { p = x; idx = i; } });
+        if (!p || !p.gallery) return;
+        galleryProduct = p;
+        galleryPhotos = p.gallery;
+        document.getElementById("galleryTitle").textContent = p.name;
+        document.getElementById("gallerySub").textContent = "Album page " + pad(idx + 1) + " of 16 · " + p.catLabel;
+        document.getElementById("gallerySize").textContent = p.size ? "Size " + p.size : "Blouse piece included";
+        document.getElementById("galleryPrice").textContent = money(p.price);
+        document.getElementById("galleryDetail").textContent = p.detail;
+        galleryThumbs.innerHTML = "";
+        galleryPhotos.forEach(function (ph, i) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", "View photo " + (i + 1) + " of " + p.name);
+          b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+          b.innerHTML = '<img src="' + ph.src + '" alt="" />';
+          b.addEventListener("click", function () { showGalleryPhoto(i); });
+          galleryThumbs.appendChild(b);
+        });
+        showGalleryPhoto(0);
+        galleryEl.classList.add("open");
+        galleryEl.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeGallery() {
+        galleryEl.classList.remove("open");
+        galleryEl.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+      document.getElementById("galleryClose").addEventListener("click", closeGallery);
+      document.getElementById("galleryPrev").addEventListener("click", function () { showGalleryPhoto(galleryIndex - 1); });
+      document.getElementById("galleryNext").addEventListener("click", function () { showGalleryPhoto(galleryIndex + 1); });
+      document.addEventListener("keydown", function (e) {
+        if (!galleryEl.classList.contains("open")) return;
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowLeft") showGalleryPhoto(galleryIndex - 1);
+        if (e.key === "ArrowRight") showGalleryPhoto(galleryIndex + 1);
+      });
+
+      renderGrid("all");
+    </script>
+  </body>
+</html>
